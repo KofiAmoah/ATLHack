@@ -1,7 +1,56 @@
-<h1>P.I.N.G</h1>
+<!-- <h1>P.I.N.G</h1>
 
 <%= form_tag('/send_sms', method: 'POST') do %>
 	<input type="text" placeholder="enter number" name="number">
 	<input type="text" placeholder="enter message here" name="message">
 	<button type="submit">Submit</button>
 <% end %>
+ -->
+<!DOCTYPE html>
+<html>
+	<head>
+    	<meta charset="utf-8">
+    	<title>PING: Welcome</title>
+    	<link rel="stylesheet" media="screen" href="stylesRegister.css" >
+    	<link rel="icon" type="image/ico" href="favicon.ico">
+	</head>
+
+	<body background="bgImage.jpg">
+		
+		<div style="width:800px; margin:0 auto;">
+
+	<%= form_tag('/send_sms', method: 'POST', id: "register_form", class: "register_form", name: "register_form") do %>		
+<!-- 	<form id="register_form" class="register_form" method="post" name="register_form" >
+ --> 				<ul>
+    				<li>
+         				<h2>Please Enter Message Below:</h2>
+         				<span class="required_notification">* All Fields Required</span>
+    				</li>
+                    <li>
+                        <label for="website">Phone:</label>
+                        <input type="text" name ="number" placeholder="6153298500" required pattern="[0-9]{10}" />
+                        <span class="form_hint">Proper format "6153298500"</span>
+                    </li>
+    				<li>
+        				<label for="name">Subject:</label>
+        				<input type="text" id="name" name="subject" placeholder="subject" required/>
+    				</li>
+    				<li>
+    					<label for="content">Message:</label>
+				    	<textarea rows="10" cols="80" maxlength="140" type="text" id="email" name="message" placeholder="Message Summary..."/></textarea>
+					</li>
+					
+					<li>
+				    	<button class="submit" id="btnButton" type="submit" >Send Message</button>
+					</li>
+				</ul>
+			<!-- </form> -->
+			<% end %>
+        
+        	<footer>
+        		<a href="http://www.fisk.edu" target="_blank"> <img src="/assets/images/fiskUni.png" alt="Fisk university image" height="100" width="350"></a>
+        	</footer>
+        </div>
+
+	</body>
+</html>
