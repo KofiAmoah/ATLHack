@@ -13,9 +13,19 @@ class TwilioController < ApplicationController
 
   	@client = Twilio::REST::Client.new account_sid, auth_token
 
-  	@message = @client.account.messages.create({:to => "+1"+"#{number}",
-  																:from => "+16147790912",
-  																:body => "Subj: "+"#{subject}"+" "+"Msg: "+"#{message}"})
+  	# @message = @client.account.messages.create({:to => "+1"+"#{number}",
+  	# 															:from => "+16147790912",
+  	# 															:body => "SUBJ: "+"#{subject}"+"\n"+"MSG: "+"#{message}"})
+
+    f = File.open("users.txt", "r")
+    f.each_line do |line|
+      number = line.split(";").last
+      @message = @client.account.messages.create({:to => "+1"+"#{number}",
+                                  :from => "+16147790912",
+                                  :body => "SUBJ: "+"#{subject}"+"\n"+"MSG: "+"#{message}"})
+    end
+    f.close
+
   	redirect_to '/'
   end
 
@@ -24,4 +34,5 @@ class TwilioController < ApplicationController
   #   verification_code = (1000...9999).to_a.shuffle.first
 
   # end
+
 end
