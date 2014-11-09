@@ -1,9 +1,34 @@
-== README
+== PING
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Developed using Ruby on Rails, this web application aims to ensure that you check your email only when neccessary.
+
+The initial design was to access a user's email when he/she receives an email, summarize that email and send it as a formatted SMS to the user's phone.
+This design was mainly to help keep students who rarely check their .edu emails updated on every important information they may have missed.
+
+Due to complexities and inadequate time, the web application has been stripped to its fundamental feature: sending summarized information to users in as SMS.
+
+Demo-Url: https://ping-web-app.herokuapp.com
+
+Things to be noted:
+
+* Application is subject to change as it is still under development
+
+* Initial version was designed just to test if the idea is feasible
+
+* Security was not top priority during development
 
 
+Follow the steps below for your own version
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Clone repository
+
+* Copy <tt>twilio_controller.rb.cp</tt> to <tt>twilio_controller.rb</tt>
+
+* Replace <tt>auth_token</tt> and <tt>account_sid</tt> with your own from the twilio dashboard
+
+* Choose which <tt>@message</tt> request to use based on whether you are using a trial or upgraded version of twilio
+
+* Create your own <tt>user.txt</tt> or read from a db
+
+
+Feel free to fork and contribute!!!
