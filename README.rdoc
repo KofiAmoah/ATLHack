@@ -24,11 +24,15 @@ Follow the steps below for your own version
 
 * Copy <tt>twilio_controller.rb.cp</tt> to <tt>twilio_controller.rb</tt>
 
+* Run <tt>bundle install</tt>
+
 * Replace <tt>auth_token</tt> and <tt>account_sid</tt> with your own from the twilio dashboard
 
 * Choose which <tt>@message</tt> request to use based on whether you are using a trial or upgraded version of twilio
 
-* Create your own <tt>user.txt</tt> or read from a db
+* Create your own <tt>users.txt</tt> or read from a db
+
+* Also note that we used the <tt>postgresql gem</tt> instead of <tt>sqlite3 gem</tt>. This was because hosted on heroku. Use <tt>sqlite3 gem</tt> for Active Record
 
 
 Feel free to fork and contribute!!!
