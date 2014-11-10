@@ -7,7 +7,6 @@ This design was mainly to help keep students who rarely check their .edu emails 
 
 Due to complexities and inadequate time, the web application has been stripped to its fundamental feature: sending summarized information to users in as SMS.
 
-Demo-Url: https://ping-web-app.herokuapp.com
 
 Things to be noted:
 
